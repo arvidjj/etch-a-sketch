@@ -1,31 +1,15 @@
-/*let gridDiv1;
-let gridDiv2;
-let gridDiv3;
-let gridDiv4;
-let gridDiv5;
-let gridDiv6;
-let gridDiv7;
-let gridDiv8;
-let gridDiv9;
-let gridDiv10;
-let gridDiv11;
-let gridDiv12;
-let gridDiv13;
-let gridDiv14;
-let gridDiv15;
-let gridDiv16;
-const gridDivs = []*/
 
 const mainContainer = document.querySelector('#mainContainer');
 
 const gridSizeSlider = document.querySelector("#gridSizeSlider");
+let currentGridValue = 16;
 let output = document.querySelector("#gridSizeP");
 output.innerHTML = gridSizeSlider.value;
 gridSizeSlider.oninput = function() {
+    currentGridValue = this.value;
     output.innerHTML = `${this.value}x${this.value}`;
     createGrids(this.value);
   }
-
 
 function createGrids(canvasSize = 16) {
     resetGrids();
@@ -38,6 +22,29 @@ function createGrids(canvasSize = 16) {
             mainContainer.appendChild(gridDiv);
         }
     }
+
+    let gridFullList = document.querySelectorAll('.gridDiv');
+    
+    gridFullList.forEach(a => (a.addEventListener('click', clickedGrid)));
+
+}
+
+let randomColorActive = false;
+let currentColor = 'black';
+
+let buttonRandomRGB = document.querySelector('#buttonRandomRGB');
+buttonRandomRGB.addEventListener('click', toggleRandom);
+
+function toggleRandom() {
+    randomColorActive = !randomColorActive;
+}
+
+function clickedGrid(e) {
+    if (randomColorActive === true) {
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        currentColor = "#" + randomColor;
+    }
+    this.style.backgroundColor = currentColor;
 }
 
 function resetGrids() {
@@ -45,3 +52,6 @@ function resetGrids() {
         mainContainer.innerHTML = '';
     }
 }
+
+let buttonClear = document.querySelector('#buttonClear');
+buttonClear.addEventListener('click', createGrids);

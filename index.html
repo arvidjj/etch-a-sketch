@@ -18,14 +18,23 @@
             <h1>Etch-A-Sketch</h1>
         </header>
 
-        <div style="text-align:center;">
-            <label for="gridSize">Grid Size (between 1 and 100):</label>
-            <p><span id="gridSizeP"></span></p>
-            <input class="slider" type="range" id="gridSizeSlider" name="gridSize" min="1" max="100" value="16">
-        </div>
+        <div class="mainGame">
+            <div class="menu" style="text-align:center;">
+                <div class="labelDiv">
+                    <label for="gridSize"><h3>Grid Size (between 1 and 100):</h3></label>
+                    <p id="gridSizeP" style="margin-bottom: 5px"></p>
+                    <input class="slider" type="range" id="gridSizeSlider" name="gridSize" min="1" max="100" value="16">
+                </div>
 
-        <div class="mainGridsContainer gridDisposition" id="mainContainer" style="grid-template-columns: repeat(16, 1fr); grid-template-rows: repeat(16, 1fr);">
+                <button class="btn randomRGBButton" id="buttonRandomRGB">RANDOM RGB MODE</button>
 
+                <button class="btn buttonClear" id="buttonClear" style="margin-top:auto;">Clear</button>
+            </div>
+
+            <div class="mainGridsContainer gridDisposition smallShadow" id="mainContainer"
+                style="grid-template-columns: repeat(16, 1fr); grid-template-rows: repeat(16, 1fr);">
+
+            </div>
         </div>
     </div>
 
