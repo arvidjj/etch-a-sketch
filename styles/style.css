@@ -161,3 +161,27 @@ header {
     background: #04AA6D;
     cursor: pointer;
 }
+
+.contactItem {
+    display: flex;
+    margin-top: auto;
+}
+
+.contactItem a {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    padding-right: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.contactItem a:hover .contactH {
+    text-shadow: 0 0 5px rgb(133, 125, 204), 0 0 7px #ff0000;
+}
+
+.contactItem a img {
+    width: auto;
+    height: 25px;
+    margin-right: 12px;
+}
