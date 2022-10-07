@@ -18,7 +18,7 @@ header {
 }
 
 .smallShadow {
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .screen20 {
@@ -37,6 +37,7 @@ header {
     margin-right: 20px;
     border:2px solid #04AA6D;
     border-radius: 16px;
+    background-color: #a0ffdc;
     display:flex;
     flex-direction: column;
 }
@@ -65,16 +66,24 @@ header {
 
 .randomRGBButton {
     border: 5px solid #04AA6D;
-    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
-.randomRGBButton:hover {
+.randomRGBButton.active {
     border: 5px solid #04AA6D;
-    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
 }
 
 .mainGridsContainer {
