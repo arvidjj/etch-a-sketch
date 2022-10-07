@@ -41,13 +41,14 @@ window.addEventListener('mouseup', () => {
 
 let shadowModeActive = false;
 let randomColorActive = false;
-let modesList = [shadowModeActive, randomColorActive];
+let eraserActive = false;
+let modesList = [shadowModeActive, randomColorActive, eraserActive];
 let currentColor = 'black';
+let backgroundColor = 'white';
 let lastColor = currentColor;
 
 let buttonRandomRGB = document.querySelector('#buttonRandomRGB');
 buttonRandomRGB.addEventListener('click', toggleRandom);
-
 function toggleRandom() {
     if (modesList[0]) {
         unToggleButtons();
@@ -67,7 +68,6 @@ function toggleRandom() {
 
 let buttonShadowMode = document.querySelector('#buttonShadowMode');
 buttonShadowMode.addEventListener('click', toggleShadow);
-
 function toggleShadow() {
     if (modesList[1]) {
         unToggleButtons();
@@ -80,6 +80,23 @@ function toggleShadow() {
         buttonShadowMode.classList.add('active');
     } else {
         buttonShadowMode.classList.remove('active');
+    }
+}
+
+let buttonEraser = document.querySelector('#buttonEraser');
+buttonEraser.addEventListener('click', toggleEraser);
+function toggleEraser() {
+    if (modesList[2]) {
+        unToggleButtons();
+        return;
+    }
+    unToggleButtons();
+    modesList[2] = !modesList[2];
+
+    if (modesList[2]) {
+        buttonEraser.classList.add('active');
+    } else {
+        buttonEraser.classList.remove('active');
     }
 }
 
@@ -109,6 +126,8 @@ function clickedGrid(e) {
 
             let shadowColor = `rgba(0, 0, 0, ${gridColor})`;
             currentColor = shadowColor;
+        } else if (modesList[2] === true) { //eraser
+            currentColor = backgroundColor;
         }
         this.style.backgroundColor = currentColor;
     }

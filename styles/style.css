@@ -54,6 +54,7 @@ header {
     border: 1px solid transparent;
     border-radius: 16px;
     transition: transform .15s;
+    margin-bottom: 15px;
 }
 
 .btn:hover {
@@ -87,13 +88,22 @@ header {
 }
 
 .shadowModeButton {
-    border: 5px solid #04AA6D;
-    margin-bottom: 15px;
+    border: 5px solid #04AA6D; 
 }
 
 .shadowModeButton.active {
     border: 5px solid #04AA6D;
     box-shadow: 5px 10px 20px 5px gray inset;
+}
+
+.eraserButton {
+    border: 5px solid #04AA6D;
+}
+
+.eraserButton.active {
+    border: 5px solid #04AA6D;
+    background-color: black;
+    color: white;
 }
 
 .mainGridsContainer {
