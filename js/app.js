@@ -4,10 +4,10 @@ const mainContainer = document.querySelector('#mainContainer');
 const gridSizeSlider = document.querySelector("#gridSizeSlider");
 let currentGridValue = 16;
 let output = document.querySelector("#gridSizeP");
-output.innerHTML = gridSizeSlider.value;
+output.innerHTML = `${gridSizeSlider.value}x${gridSizeSlider.value}`;
 gridSizeSlider.oninput = function () { //SLIDER GET VALUE
     currentGridValue = this.value;
-    output.innerHTML = `${this.value}x${this.value}`;
+    output.textContent = `${this.value}x${this.value}`;
     createGrids(this.value);
 }
 
